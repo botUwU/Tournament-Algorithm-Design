@@ -14,7 +14,7 @@
 //SimulateRound(teamList):
     
 
-    Winners = []
+    Winners = Length(teamList) // 2
     for i in range (teamList, step = 2):
         winner = SimulateMath(teamList[i], teamList[i+1])
         winner.append(winner)
@@ -42,3 +42,34 @@
     end While
     Display("The Champion is: ", Teams[1])
 End Algorithm
+
+
+
+|||||   RUNTIME AND COMPLEXITY    |||||
+
+
+InitializeTeams() Complexity
+The function generates n teams, each with a random strength.
+The loop runs n times, appending teams to the list.
+Time Complexity: O(n)
+
+
+
+SimulateRound(teamList) Complexity
+The function iterates through n teams in pairs (i.e., step size = 2).
+This results in n/2 iterations in the first round.
+Each round halves the number of teams, meaning we have log(n) rounds.
+Time Complexity (for one round): O(n)
+Total Rounds Complexity: O(n log n)
+
+
+SimulateMatch(A, B) Complexity
+The function only executes constant operations (random number generation and condition checks).
+Time Complexity: O(1)
+
+
+
+ChampionsLeague() Complexity
+The main loop runs while Length(Teams) > 1, meaning log(n) rounds.
+Each round calls SimulateRound(), which processes n teams in O(n).
+Overall Complexity: O(n log n)
