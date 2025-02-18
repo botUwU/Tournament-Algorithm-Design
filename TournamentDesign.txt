@@ -22,6 +22,9 @@
 
 
 
+//check_square_value(n, x):
+    O(log log n)
+
 //SimulateMatch(Team A, Team B):
     chance = random number from (1, 100)
     if(chance > 40 and chance < 60):
