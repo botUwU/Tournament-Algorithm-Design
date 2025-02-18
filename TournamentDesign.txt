@@ -1,0 +1,44 @@
+// initializeTeams():
+
+    n = number of teams
+    n must be a value of the  2 to the power of x
+    structure of a team:
+    team =     {
+            name: "team name",
+            strength: random number from (1 - 100)
+        } 
+    teams = [n number of teams]
+    for every team provide team name and team strength
+    return teams;
+
+//SimulateRound(teamList):
+    
+
+    Winners = []
+    for i in range (teamList, step = 2):
+        winner = SimulateMath(teamList[i], teamList[i+1])
+        winner.append(winner)
+    return winners
+
+
+
+//SimulateMatch(Team A, Team B):
+    chance = random number from (1, 100)
+    if(chance > 40 and chance < 60):
+        if(A.strength > B.strength):
+            return B
+        else:
+            return A
+    else:
+        if(A.strength > B.strength):
+            return A
+        else:
+            return B
+
+//  ChampionsLeague()
+    Teams <- initializeTeams()
+    While Length(Teams) > 1 Do:
+        Teams <- SimulateRound(Teams)
+    end While
+    Display("The Champion is: ", Teams[1])
+End Algorithm
